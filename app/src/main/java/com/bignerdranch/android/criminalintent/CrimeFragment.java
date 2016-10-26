@@ -167,6 +167,7 @@ public class CrimeFragment extends Fragment{
         }
 
         mPhotoView=(ImageView)v.findViewById(R.id.crime_photo);
+        updatePhotoView();
         mPhotoButton=(ImageButton)v.findViewById(R.id.crime_camera);
         final Intent captureImage=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         boolean canTakePhoto=mPhotoFile !=null &&
@@ -184,7 +185,7 @@ public class CrimeFragment extends Fragment{
                 startActivityForResult(captureImage,REQUEST_PHOTO);
             }
         });
-        updatePhotoView();
+
 
         return v;
     }
